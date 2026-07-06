@@ -36,7 +36,7 @@ GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 @st.cache_resource
 def load_resources() -> tuple[Groq, Any, list[ChatMessage]]:
     llm = Groq(
-        model="llama-3.3-70b-versatile",
+        model="llama-3.1-8b-instant",
         api_key=GROQ_API_KEY,
     )
 
@@ -127,7 +127,7 @@ with st.sidebar:
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown(
         "<p style='color: #94a3b8; font-size: 15px; line-height: 1.5;'>"
-        "Built a RAG system using 2,000 Open Trivia Database QA pairs as the knowledge base, leveraging Llama 3.3 70B for context-driven answer generation. You can ask for categories and difficulties."
+        "Built a RAG system using 2,000 Open Trivia Database QA pairs as the knowledge base, leveraging llama-3.1-8b-instant for context-driven answer generation."
         "</p>", 
         unsafe_allow_html=True
     )
